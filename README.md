@@ -25,7 +25,7 @@ https://github.com/AACHOURMOHAMED/expense-tracker.git
 ``` 
 
 ## Live demo
-https://aachourmohamed.github.io/TodoList_JavaScript/
+https://dainty-monstera-a25b41.netlify.app/
 
 ## Test
 To track linter errors locally follow these steps:  
