@@ -1,10 +1,11 @@
-import './Card.css'
+import './Card.css';
 
-const  Card = (data) => {
+const Card = (data) => {
+  // eslint-disable-next-line react/destructuring-assignment
+  const classes = `card ${data.className}`;
 
-    const classes = 'card ' + data.className;
-
-    return <div className={classes}>{data.children}</div>
-}
+  // eslint-disable-next-line react/destructuring-assignment
+  return <div className={classes}>{data.children}</div>;
+};
 
 export default Card;

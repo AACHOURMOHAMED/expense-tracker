@@ -1,20 +1,23 @@
-import React from "react";
-import "./Chart.css";
-import ChartBar from "./ChartBar";
+import React from 'react';
+import './Chart.css';
+import ChartBar from './ChartBar';
+
 const Chart = (data) => {
-  const dataPointValues = data.dataPoints.map(dataPoint => dataPoint.value)
-  const totalMaximum = Math.max(...dataPointValues)
+  // eslint-disable-next-line react/destructuring-assignment
+  const dataPointValues = data.dataPoints.map((dataPoint) => dataPoint.value);
+  const totalMaximum = Math.max(...dataPointValues);
   return (
     <div className="chart">
+      {/* eslint-disable-next-line react/destructuring-assignment */}
       {data.dataPoints.map(
-        (dataPoint => (
+        ((dataPoint) => (
           <ChartBar
             key={dataPoint.label}
             value={dataPoint.value}
             maxValue={totalMaximum}
             label={dataPoint.label}
           />
-        ))
+        )),
       )}
     </div>
   );

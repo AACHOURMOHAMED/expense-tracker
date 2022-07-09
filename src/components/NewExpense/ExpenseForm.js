@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import "./ExpenseForm.css";
+import React, { useState } from 'react';
+import './ExpenseForm.css';
+
 const ExpenseForm = (data) => {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
 
   const titleChangeHandler = (e) => {
     setEnteredTitle(e.target.value);
@@ -25,18 +26,19 @@ const ExpenseForm = (data) => {
       date: new Date(enteredDate),
     };
 
-    setEnteredTitle("");
-    setEnteredAmount("");
-    setEnteredDate("");
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
 
+    // eslint-disable-next-line react/destructuring-assignment
     data.onSaveExpenseData(expenseData);
-    
   };
   return (
     <>
       <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>Title</label>
             <input
               type="text"
@@ -45,6 +47,7 @@ const ExpenseForm = (data) => {
             />
           </div>
           <div className="new-expense__control">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>Amount</label>
             <input
               type="number"
@@ -55,6 +58,7 @@ const ExpenseForm = (data) => {
             />
           </div>
           <div className="new-expense__control">
+            {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>Date</label>
             <input
               type="date"
@@ -66,11 +70,12 @@ const ExpenseForm = (data) => {
           </div>
         </div>
         <div className="new-expense__actions">
+          {/* eslint-disable-next-line react/destructuring-assignment */}
           <button type="button" onClick={data.onCancle}>Cancle</button>
           <button type="submit">Add Expense</button>
         </div>
       </form>
-      
+
     </>
   );
 };
